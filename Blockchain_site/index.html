@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SMLY site</title>
+<style>
+body{display: flex;justify-content: center;flex-direction: column;align-items: center;font-family:sans-serif;background-color: #EEEEEE;}
+.title{font-size: 28px;}
+h2{font-weight:100;}
+.text{font-size:20px;}
+.problem{display: flex;}
+</style>
+</head>
+<body>
+    <script>
+        let num1;
+        let num2;
+        function refreshnums(){
+        num1 = parseInt(Math.random()*100);num2=parseInt(Math.random()*100);
+        document.getElementsByClassName("num1")[0].innerHTML=''+num1;
+        document.getElementsByClassName("num2")[0].innerHTML=''+num2;
+        }
+        function clear(){document.getElementsByClassName('input')[0].value='';}
+
+  function onSubmit(e) {
+  e.preventDefault();
+  const input = e.target.querySelector("input");
+  if (input.value.length > 0 && parseInt(input.value)==input.value) {
+      if(parseInt(input.value)===num1+num2)document.getElementsByClassName("corrans")[0].innerHTML = parseInt(document.getElementsByClassName("corrans")[0].innerText)+1;refreshnums();clear();
+    } 
+    else {
+    alert("Please enter a valid integer");clear();
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", onSubmit);
+  refreshnums();
+});    
+
+
+
+    </script>
+<div class= title>
+    <h2>
+        Welcome!
+    </h2>
+</div>
+<div class = text>
+<p>This site is entirely stored on the SMLY blockchain.</p>
+</div>
+<div class=content>
+    <div class = problem>
+    <p class="num1"></p>
+    <p>+</p>
+    <p class= num2></p>
+    <p>=</p>
+    </div>
+    <form>
+        <input type='text'class='input'>
+        <label>Enter the right answer!</label>
+    </form>
+    <p>Correct answers:</p>
+    <p class="corrans">0</p>
+</div>
+</body>
+</html>

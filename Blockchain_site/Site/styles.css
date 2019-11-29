@@ -1,0 +1,30 @@
+
+body{
+    background-color:#EFEFEF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:sans-serif;
+}
+
+.form{
+    padding-top: 300px;
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    padding: 12px 10px 10px 0px;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+}
+input[type='text']{
+    font-size: 24px;
+}
+.title{
+font-size: 48px;
+
+font-weight: 100;
+}
